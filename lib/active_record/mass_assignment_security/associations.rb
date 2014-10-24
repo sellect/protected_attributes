@@ -2,7 +2,7 @@ module ActiveRecord
   module Associations
     class Association
       def build_record(attributes, options)
-        reflection.build_association(attributes) do |record|
+        reflection.build_association(attributes, options) do |record|
           attributes = create_scope.except(*(record.changed - [reflection.foreign_key]))
           record.assign_attributes(attributes, without_protection: true)
         end
