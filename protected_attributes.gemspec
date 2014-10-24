@@ -17,7 +17,7 @@ Gem::Specification.new do |gem|
   gem.test_files    = Dir["test/**/*.rb"]
   gem.require_paths = ["lib"]
 
-  gem.add_dependency "activemodel",  "4.2.0beta2"
+  gem.add_dependency "activemodel",  ">=4.2.0beta2", "< 5.0"
 
   gem.add_development_dependency "activerecord", ">= 4.2.0beta2", "< 5.0"
   gem.add_development_dependency "actionpack",   ">= 4.2.0beta2", "< 5.0"
