@@ -580,6 +580,12 @@ class MassAssignmentSecurityHasManyRelationsTest < ActiveSupport::TestCase
     assert_default_attributes(best_friend)
   end
 
+  def test_has_many_through_build_with_attr_accessible_attributes
+    group = Group.create!
+    pirate = group.members.build(name: "Murphy")
+    assert_equal "Murphy", pirate.name
+  end
+
   def test_has_many_build_with_admin_role_with_attr_protected_attributes
     best_friend = @person.best_friends.build(attributes_hash, :as => :admin)
     assert_admin_attributes(best_friend)
